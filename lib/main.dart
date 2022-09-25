@@ -32,6 +32,17 @@ class MyHomePage extends StatelessWidget {
               height:400,
               width: 300,
               color: Colors.grey[700],
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(0.toString()),
+                    ],
+
+                  ),
+                ],
+              ),
             ),
           ),
         ),
