@@ -35,9 +35,10 @@ class MyHomePage extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(0.toString()),
+                      Text(0.toString(),
+                      ),
                     ],
 
                   ),
