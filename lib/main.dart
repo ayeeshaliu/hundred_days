@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -23,27 +24,28 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.black12,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).viewInsets.vertical + 40,horizontal: MediaQuery.of(context).viewInsets.horizontal + 20 ),
           child: Center(
-            child: Container(
-              height:400,
-              width: 300,
-              color: Colors.grey[700],
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(0.toString(),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 50),
+                      child: Text(0.toString(),
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
-                    ],
+                    ),
+                  ],
 
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
