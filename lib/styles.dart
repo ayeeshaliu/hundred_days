@@ -18,9 +18,9 @@ class MyText extends StatelessWidget {
     return Text(
       "$title",
       style: TextStyle(
-        fontWeight: fontWeight ?? FontWeight.w700,
+        fontWeight: fontWeight ?? FontWeight.w400,
         fontFamily: "$family",
-        fontSize: size ?? 13,
+        fontSize: size ?? 40,
         fontStyle: fontStyle ?? FontStyle.normal,
         letterSpacing: letterSpacing ?? 0.2,
         color: color?? Colors.white,
@@ -28,3 +28,26 @@ class MyText extends StatelessWidget {
     );
   }
 }
+
+
+class Circles extends StatelessWidget {
+  final double ?radius;
+  final Color ?backgroundColor;
+  final Widget ? child;
+  //final String title;
+
+  Circles({this.radius, this.backgroundColor, this.child});
+
+  //const Circles({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: radius ?? 45,
+      backgroundColor: backgroundColor??  Colors.grey,
+      child: child,
+
+    );
+  }
+}
+
