@@ -20,9 +20,34 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+
+  Widget calcButton (String btntxt, Color btncolor, Color txtcolor){
+    return Container(
+      child: ElevatedButton(
+        onPressed: (){},
+        child: Text("$btntxt",
+          style: TextStyle(
+            fontSize: 35,
+            color: txtcolor,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          primary: btncolor,
+          fixedSize: Size(90, 90),
+          shape: CircleBorder(),
+      ),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,195 +56,108 @@ class MyHomePage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).viewInsets.vertical + 40,horizontal: MediaQuery.of(context).viewInsets.horizontal + 5 ),
           child: Center(
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 90, right: MediaQuery.of(context).viewInsets.left +10, bottom: MediaQuery.of(context).viewInsets.bottom +10),
-                      child: MyText(
-                        title: 0.toString(),
-                        size: 90,
-                        fontWeight: FontWeight.w100,
-                      )
-                    ),
-                  ],
-
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Circles(
-                      backgroundColor: Colors.grey,
-                      child: MyText(
-                        title: "C",
-                        color: Colors.black,
-                      ),
-                    ),
-                    Circles(
-                      backgroundColor: Colors.grey,
-                      child: MyText(
-                        title: "+/-",
-                        color: Colors.black,
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.grey,
-                      child: MyText(
-                        title: "%",
-                        color: Colors.black,
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.orange[500],
-                      child: MyText(
-                        title: "/",
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 15)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "7",
-                      ),
-                    ),
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "8",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "9",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.orange[500],
-                      child: MyText(
-                        title: "x",
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "4",
-                      ),
-                    ),
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "5",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "6",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.orange[500],
-                      child: MyText(
-                        title: "-",
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "1",
-                      ),
-                    ),
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "2",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "3",
-                      ),
-                    ),
-
-                    Circles(
-                      backgroundColor: Colors.orange[500],
-                      child: MyText(
-                        title: "+",
-                      ),
-                    ),
-                  ],
-                ),
-
-                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 10)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      //color: Colors.grey[800],
-                      width: 180,
-                      height: 80,
-                      child: Padding(
-                        padding:  EdgeInsets.only(left: MediaQuery.of(context).viewInsets.left + 30, top: MediaQuery.of(context).viewInsets.left + 15 ),
-                        child: MyText(
-                          title: 0.toString(),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: MediaQuery.of(context).viewInsets.top + 90, right: MediaQuery.of(context).viewInsets.left +10, bottom: MediaQuery.of(context).viewInsets.bottom +10),
+                        child: Text("$text",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w200,
+                            color: Colors.white,
+                            fontSize: 100,
+                          ),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[800],
-                        borderRadius: BorderRadius.all(Radius.circular(40)),
-                            
+                    ],
+
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      calcButton("AC", Colors.grey, Colors.black),
+                      calcButton("+/-", Colors.grey, Colors.black),
+                      calcButton("%", Colors.grey, Colors.black),
+                      calcButton("/", Colors.orange, Colors.white)
+                    ],
+                  ),
+
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      calcButton("7", Colors.grey, Colors.black),
+                      calcButton("8", Colors.grey, Colors.black),
+                      calcButton("9", Colors.grey, Colors.black),
+                      calcButton("x", Colors.orange, Colors.white)
+                    ],
+                  ),
+
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      calcButton("4", Colors.grey, Colors.black),
+                      calcButton("5", Colors.grey, Colors.black),
+                      calcButton("6", Colors.grey, Colors.black),
+                      calcButton("-", Colors.orange, Colors.white)
+                    ],
+                  ),
+
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      calcButton("1", Colors.grey, Colors.black),
+                      calcButton("2", Colors.grey, Colors.black),
+                      calcButton("3", Colors.grey, Colors.black),
+                      calcButton("+", Colors.orange, Colors.white),
+                    ],
+                  ),
+
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                          onPressed: (){},
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(34, 20, 128, 20),
+                            child: Text("0",
+                              style: TextStyle(
+                                fontSize: 35,
+                                color: Colors.white,
+                              ),
+                            ),
+
+                          ),
+                        style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          primary: Colors.grey,
+                          fixedSize: Size(200, 85)
                         ),
                       ),
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: ".",
-                      ),
-                    ),
-                    Circles(
-                      backgroundColor: Colors.grey[800],
-                      child: MyText(
-                        title: "=",
-                      ),
-                    ),
-                  ],
-                ),
+                      calcButton(".", Colors.grey, Colors.white),
+                      calcButton("=", Colors.orange, Colors.white),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
 
-              ],
+
+                ],
+              ),
             ),
           ),
         ),
       ),
+
     );
   }
+  dynamic text = "0";
 }
 
 
