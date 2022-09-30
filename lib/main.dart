@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hundred_days/Change%20color.dart';
 import 'package:hundred_days/styles.dart';
 
 
@@ -13,9 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+
       debugShowCheckedModeBanner: false,
 
-      home: const MyHomePage(),
+      home: const changeColor(),
     );
   }
 }
@@ -30,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 
-  Widget calcButton (String btntxt, Color btncolor, Color txtcolor){
+  Widget calcButton (String btntxt, Color ?btncolor, Color txtcolor){
     return Container(
       child: ElevatedButton(
         onPressed: (){},
@@ -82,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       calcButton("AC", Colors.grey, Colors.black),
                       calcButton("+/-", Colors.grey, Colors.black),
                       calcButton("%", Colors.grey, Colors.black),
-                      calcButton("/", Colors.orange, Colors.white)
+                      calcButton("/", Colors.amber[700], Colors.white)
                     ],
                   ),
 
@@ -90,10 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      calcButton("7", Colors.grey, Colors.black),
-                      calcButton("8", Colors.grey, Colors.black),
-                      calcButton("9", Colors.grey, Colors.black),
-                      calcButton("x", Colors.orange, Colors.white)
+                      calcButton("7", Colors.grey[850], Colors.white),
+                      calcButton("8", Colors.grey[850], Colors.white),
+                      calcButton("9", Colors.grey[850], Colors.white),
+                      calcButton("x", Colors.amber[700], Colors.white)
                     ],
                   ),
 
@@ -101,10 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      calcButton("4", Colors.grey, Colors.black),
-                      calcButton("5", Colors.grey, Colors.black),
-                      calcButton("6", Colors.grey, Colors.black),
-                      calcButton("-", Colors.orange, Colors.white)
+                      calcButton("4", Colors.grey[850], Colors.white),
+                      calcButton("5", Colors.grey[850], Colors.white),
+                      calcButton("6", Colors.grey[850], Colors.white),
+                      calcButton("-", Colors.amber[700], Colors.white)
                     ],
                   ),
 
@@ -112,10 +117,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      calcButton("1", Colors.grey, Colors.black),
-                      calcButton("2", Colors.grey, Colors.black),
-                      calcButton("3", Colors.grey, Colors.black),
-                      calcButton("+", Colors.orange, Colors.white),
+                      calcButton("1", Colors.grey[850], Colors.white),
+                      calcButton("2", Colors.grey[850], Colors.white),
+                      calcButton("3", Colors.grey[850], Colors.white),
+                      calcButton("+", Colors.amber[700], Colors.white),
                     ],
                   ),
 
@@ -137,12 +142,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         style: ElevatedButton.styleFrom(
                           shape: StadiumBorder(),
-                          primary: Colors.grey,
+                          primary: Colors.grey[850],
                           fixedSize: Size(200, 85)
                         ),
                       ),
-                      calcButton(".", Colors.grey, Colors.white),
-                      calcButton("=", Colors.orange, Colors.white),
+                      calcButton(".", Colors.grey[850], Colors.white),
+                      calcButton("=", Colors.amber[700], Colors.white),
                     ],
                   ),
                   SizedBox(height: 10,),
